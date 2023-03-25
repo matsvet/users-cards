@@ -1,12 +1,13 @@
 import React from "react";
 import UserRow from "./UserDisplay/UserRow";
 
-const UsersInRow = () => {
-    return <body>
+const UsersInRow = (users: any) => {
+    console.log(users)
+    return <div>
         <UserRow/>
         <UserRow/>
         <UserRow/>
-    </body>
+    </div>
 }
 
 export default UsersInRow;
