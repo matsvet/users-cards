@@ -1,7 +1,15 @@
 .header {
-    padding: 1%;
+    padding: 1.5% 0 1% 0;
     background-color: #E5E7EB;
     display: flex;
     justify-content: space-between;
+    width: 95%;
+    margin: 0 auto;
+}
 
+.headerText {
+    display: flex;
+    align-items: center;
+    font-size: larger;
+    color: #374151;
 }

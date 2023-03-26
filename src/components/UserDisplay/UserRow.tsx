@@ -1,8 +1,8 @@
 import React from "react";
 
-const UserRow = () => {
+const UserRow = (props: any) => {
     return <div>
-    Пользователь в строке
+        {props.user.phone}
     </div>
 }
 

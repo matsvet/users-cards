@@ -1,6 +1,14 @@
 .App {
   text-align: center;
   background-color: #E5E7EB;
+  /*toDo!*/
+  font-family: 'GolosUIWebRegular', sans-serif;
+
+}
+
+.footerInApp {
+  display: flex;
+  justify-content: center;
 }
 
 .App-logo {

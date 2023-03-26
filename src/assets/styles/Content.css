@@ -1,7 +1,36 @@
 .content {
     background-color: #ffffff;
     border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    margin: 0 1em;
+    margin: 0 auto;
+    width: 95%;
 }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td, th {
+    padding: 8px;
+    text-align: left;
+    color: #374151;
+    border-top: 1px solid #E5E7EB;
+    border-bottom: 1px solid #E5E7EB;
+}
+
+th {
+    font-weight: bold;
+    background-color: #F3F4F6;
+    color: #6B7280;
+}
+
+/*td:nth-child(1),*/
+/*td:nth-child(2),*/
+/*td:nth-last-child(1),*/
+/*td:nth-last-child(2) {*/
+/*    width: 25%;*/
+/*}*/
+
+/*td:nth-child(3) {*/
+/*    width: 100%;*/
+/*}*/

@@ -1,12 +1,40 @@
 .footer {
     position: fixed;
     bottom: 5%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 90%;
-    max-width: 800px;
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    /*align-items: center;*/
     background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 10px;
-    padding: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 1.5% 2% 1.5% 2%;
+    color: #6B7280;
+}
+
+.leftBlock {
+    display: flex;
+    align-items: center;
+}
+
+.rightBlock {
+    display: flex;
+}
+
+.pageDisplayBlock {
+    display: flex;
+    align-items: center;
+}
+
+.selectShowBy {
+    margin: 0 1em;
+}
+
+.inputPage {
+    width: 30px;
+    margin: 0 10px;
+}
+
+.prevNextPageBlock {
+    margin-left: 1em;
 }

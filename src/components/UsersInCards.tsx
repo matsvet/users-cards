@@ -1,13 +1,14 @@
 import React from "react";
 import UserMiniCard from "./UserDisplay/UserMiniCard";
+import '../assets/styles/UsersInCards.css'
 
 // const UsersInRow = (users: {results: any[]}) => {
-const UsersInRow = () => {
-    return <div>
-        <p>123</p>
-        <p>123</p>
-    {/*{users.results.map((user: any) => (<p>{user.id}</p>))}*/}
+const UsersInCards = (props: any) => {
+    let users = props.users
+
+    return <div className="userMiniCardsContainer">
+    {users.map((user: any) => (<UserMiniCard user={user}/>))}
     </div>
 }
 
-export default UsersInRow;
+export default UsersInCards;
