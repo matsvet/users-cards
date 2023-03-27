@@ -7,7 +7,12 @@ const UsersInCards = (props: any) => {
     let users = props.users
 
     return <div className="userMiniCardsContainer">
-    {users.map((user: any) => (<UserMiniCard user={user}/>))}
+    {users.map((user: any) => (<UserMiniCard user={user}
+                                             visibility={props.visibility}
+                                             setModalUserData={props.setModalUserData}
+                                             handleClick={props.handleClick}
+                                             key={user.login}
+    />))}
     </div>
 }
 

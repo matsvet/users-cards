@@ -1,14 +1,14 @@
 .footer {
     position: fixed;
-    bottom: 5%;
-    width: 95%;
+    bottom: 3%;
+    width: 91%;
     display: flex;
     justify-content: space-between;
-    /*align-items: center;*/
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.8);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(3px);
     border-radius: 10px;
-    padding: 1.5% 2% 1.5% 2%;
+    padding: 1.5vh 2% 1.5vh 2%;
     color: #6B7280;
 }
 
@@ -22,8 +22,8 @@
 }
 
 .pageDisplayBlock {
-    display: flex;
-    align-items: center;
+    /*display: flex;*/
+    /*align-items: center;*/
 }
 
 .selectShowBy {
@@ -31,10 +31,26 @@
 }
 
 .inputPage {
-    width: 30px;
+    width: 3rem;
     margin: 0 10px;
+    background-color: rgba(255, 255, 255, 0.0);
+    border-left: 1px solid #E5E7EB;
 }
 
 .prevNextPageBlock {
+    border-left: 1px solid #E5E7EB;
     margin-left: 1em;
+}
+
+.pageButton {
+    border: none;
+    box-shadow: none;
+    color: #6B7280;
+    background-color: rgba(255, 255, 255, 0.0);
+}
+
+.pageButton:disabled {
+    border: none;
+    box-shadow: none;
+    background-color: rgba(255, 255, 255, 0.0);
 }

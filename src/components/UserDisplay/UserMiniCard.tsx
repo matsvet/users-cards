@@ -1,22 +1,31 @@
-import React from "react";
+import React, {useState} from "react";
 import '../../assets/styles/UserMiniCard.css'
 import {Avatar, Card} from "antd";
+import UserModalCard from "./UserModalCard";
 
 const UserMiniCard = (props: any) => {
     const user = props.user
 
-    return <Card className="miniCard" style={{  }}>
+
+    const UserTitle = () => {
+        return <a onClick={() => props.handleClick(user)}>{user.name}</a>
+    }
+
+    return <Card className="miniCard">
         <Card.Meta
-            avatar={<Avatar src={user.img} />}
-            title={user.name}
+            className="cardHeader"
+            avatar={<Avatar className="avaImage" src={user.imgMedium} />}
+            title={UserTitle()}
             description={user.login}
         />
-        <p>Адрес</p>
-        <p>{user.location}</p>
-        <p>Телефон</p>
-        <p>{user.cell}</p>
-        <p>E-mail</p>
-        <p>{user.email}</p>
+        <div className="dataTypeWithData"><p className="userDataType">Адрес</p>
+            <p className="userData">{user.location}</p></div>
+        <div className="divider"></div>
+        <p className="userDataType">Телефон</p>
+        <p className="userData">{user.cell}</p>
+        <div className="divider"></div>
+        <p className="userDataType">E-mail</p>
+        <p className="userData">{user.email}</p>
     </Card>
 }
 

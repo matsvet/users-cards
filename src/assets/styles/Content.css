@@ -1,36 +1,27 @@
 .content {
-    background-color: #ffffff;
+    background-color: #E5E7EB;
     border-radius: 10px;
-    margin: 0 auto;
+    margin: 0 auto 15rem auto;
     width: 95%;
+    max-height: 89vh;
+    overflow-y: scroll;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
+/* полоса прокрутки (скроллбар) */
+::-webkit-scrollbar {
+    width: 6px; /* ширина для вертикального скролла */
+    height: 8px; /* высота для горизонтального скролла */
+    background-color: #e4e6ea;
 }
 
-td, th {
-    padding: 8px;
-    text-align: left;
-    color: #374151;
-    border-top: 1px solid #E5E7EB;
-    border-bottom: 1px solid #E5E7EB;
+/* ползунок скроллбара */
+::-webkit-scrollbar-thumb {
+    background-color: #9CA3AF;
+    border-radius: 9em;
+    /*box-shadow: inset 1px 1px 10px #f3faf7;*/
 }
 
-th {
-    font-weight: bold;
-    background-color: #F3F4F6;
-    color: #6B7280;
+::-webkit-scrollbar-thumb:hover {
+    background-color: #253861;
 }
 
-/*td:nth-child(1),*/
-/*td:nth-child(2),*/
-/*td:nth-last-child(1),*/
-/*td:nth-last-child(2) {*/
-/*    width: 25%;*/
-/*}*/
-
-/*td:nth-child(3) {*/
-/*    width: 100%;*/
-/*}*/

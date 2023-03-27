@@ -1,10 +1,9 @@
 import React, {useState} from "react";
 import '../assets/styles/UsersInRaw.css'
 import {Avatar, Table} from "antd";
-import UserCard from "./UserDisplay/UserModalCard";
+import UserModalCard from "./UserDisplay/UserModalCard";
 
 const UsersInRow = (props: any) => {
-    const [visible, setVisible] = useState(false)
 
     console.log('What we are getting through props in UsersInRow to final render it using map', props)
 
@@ -12,18 +11,15 @@ const UsersInRow = (props: any) => {
         pageSize: 20,
     }
 
-
     const columns = [
         {
             title: 'ФИО',
             dataIndex: 'name',
             key: 'name',
-            render: (text: any, record: any) => (
+            render: (text: string, record: any) => (
                 <div>
-                    <Avatar className="avaImage" src={record.img}/>
-                    <a className=""
-                       // onClick={() => <UserCard user={record} visible={!visible} onClose={undefined} />}
-                    >
+                    <Avatar className="avaImageTable" src={record.img}/>
+                    <a className="" onClick={() => props.handleClick(record)}>
                         {text}
                     </a>
                 </div>),
@@ -53,12 +49,11 @@ const UsersInRow = (props: any) => {
     console.log('DataSource: ', props.users)
 
     return <div>
-        <Table dataSource={props.users}
+        <Table className="tableUsersAntd"
+               dataSource={props.users}
                columns={columns}
-               pagination={pageSizeConfig}
-            // showFooter={false}
+               pagination={false}
         />
-        {/*<UserCard user={dataSource[0]} visible={true} onClose={undefined}/>*/}
     </div>
 }
 

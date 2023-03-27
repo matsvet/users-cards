@@ -1,9 +1,8 @@
 .App {
-  text-align: center;
   background-color: #E5E7EB;
-  /*toDo!*/
-  font-family: 'GolosUIWebRegular', sans-serif;
-
+  font-family: 'GolosTextWebRegular', sans-serif;
+  overflow: hidden;
+  max-height: 100vh;
 }
 
 .footerInApp {
@@ -44,4 +43,95 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+
+/* Golos-Text */
+
+@font-face {
+  font-family: 'GolosTextWebBlack';
+  src:
+          url('../src/assets/styles/fonts/golos-text_black.woff2') format('woff2'),
+          url('../src/assets/styles/fonts/golos-text_black.woff2') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GolosTextWebBold';
+  src:
+          url('../src/assets/styles/fonts/golos-text_bold.woff2') format('woff2'),
+          url('../src/assets/styles/fonts/golos-text_bold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GolosTextWebDemiBold';
+  src:
+          url('../src/assets/styles/fonts/golos-text_demibold.woff2') format('woff2'),
+          url('../src/assets/styles/fonts/golos-text_demibold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'GolosTextWebMedium';
+  src:
+          url('../src/assets/styles/fonts/golos-text_medium.woff2') format('woff2'),
+          url('../src/assets/styles/fonts/golos-text_medium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'GolosTextWebRegular';
+  src:
+          url('../src/assets/styles/fonts/golos-text_regular.woff2') format('woff2'),
+          url('../src/assets/styles/fonts/golos-text_regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'GolosTextWebVF';
+  src:
+          url('../src/assets/styles/fonts/golos-text_vf.woff2') format('woff2'),
+          url('../src/assets/styles/fonts/golos-text_vf.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Golos-UI */
+
+
+@font-face {
+  font-family: 'GolosUIWebBold';
+  src:
+          url('../src/assets/styles/fonts/golos-ui_bold.woff2') format('woff2'),
+          url('../src/assets/styles/fonts/golos-ui_bold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'GolosUIWebMedium';
+  src:
+          url('../src/assets/styles/fonts/golos-ui_medium.woff2') format('woff2'),
+          url('../src/assets/styles/fonts/golos-ui_medium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'GolosUIWebRegular';
+  src:
+          url('../src/assets/styles/fonts/golos-ui_regular.woff2') format('woff2'),
+          url('../src/assets/styles/fonts/golos-ui_regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'GolosUIWebVF';
+  src:
+          url('../src/assets/styles/fonts/golos-ui_vf.woff2') format('woff2'),
+          url('../src/assets/styles/fonts/golos-ui_vf.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }

@@ -1,9 +1,14 @@
+import {log} from "util";
+
 interface User {
     // define the User type here
 }
 
 interface UserState {
     users: User[];
+
+    page: number;
+    results: string;
     loading: boolean;
     error: any;
 }
@@ -16,6 +21,8 @@ interface Action {
 
 const initialState: UserState = {
     users: [],
+    page: 1,
+    results: '20',
     loading: false,
     error: null,
 };
@@ -24,7 +31,8 @@ function userReducer(state = initialState, action: Action) {
     switch (action.type) {
         case 'FETCH_USERS_REQUEST':
             console.log('case: FETCH_USERS_REQUEST')
-            return { ...state, loading: true };
+            console.log('page: ', action.payload)
+            return { ...state, loading: true, page: action.payload };
         case 'FETCH_USERS_SUCCESS':
             console.log('case: FETCH_USERS_SUCCESS')
             return { ...state, users: action.payload, loading: false, error: null };

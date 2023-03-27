@@ -16,12 +16,12 @@ interface FetchUsersAction extends Action {
 function* fetchUsers(action: FetchUsersAction): Generator<any, any, any> {
     console.log('before try catch in FetchUsers')
     try {
-        // const { page, results } = action.payload;
-        const page = 1
-        const results = 20
+        const page = action.payload;
+        const resultsC = 20
+        console.log('----- page in TRY: ', action.payload)
         const response = yield call(
             axios.get,
-            `https://randomuser.me/api/?nat=us&page=${page}&results=${results}`
+            `https://randomuser.me/api/?nat=us&page=${page}&results=${resultsC}&seed=abc`
         );
         console.log('fetching Users')
         const users: User[] = response.data.results;

@@ -13,3 +13,25 @@
     font-size: larger;
     color: #374151;
 }
+
+.buttonBlock {
+    background-color: #D1D5DB;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+.buttonBlock .button {
+    background-color: #D1D5DB;
+    border-radius: 5px;
+    border: none;
+
+}
+
+.buttonBlock .button:hover {
+    border: none;
+    color: #374151;
+}
+
+.buttonBlock .active {
+    background-color: #FFFFFF;
+}
