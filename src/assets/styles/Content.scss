@@ -1,0 +1,29 @@
+.content {
+  background-color: #e4e6ea;
+  border-radius: 10px;
+  margin: 0 auto 15rem auto;
+  width: 95%;
+  height: 89vh;
+  overflow-y: scroll;
+
+  &.loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 8px;
+  background-color: #e4e6ea;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #9CA3AF;
+  border-radius: 9em;
+
+  &:hover {
+    background-color: #253861;
+  }
+}
