@@ -1,17 +1,20 @@
 import React from "react";
 import UserMiniCard from "./UserDisplay/UserMiniCard";
-import '../assets/styles/UsersInCards.css'
+import "../assets/styles/UsersInCards.scss";
+import { UserData, UsersInRowProps } from "../@types/interfaces";
 
-
-const UsersInCards = (props: any) => {
-    let users = props.users
-
-    return <div className="userMiniCardsContainer">
-    {users.map((user: any) => (<UserMiniCard user={user}
-                                             handleClick={props.handleClick}
-                                             key={user.login}
-    />))}
+const UsersInCards: React.FC<UsersInRowProps> = (props) => {
+  return (
+    <div className="userMiniCardsContainer">
+      {props.users.map((user: UserData) => (
+        <UserMiniCard
+          user={user}
+          handleClick={props.handleClick}
+          key={user.login}
+        />
+      ))}
     </div>
-}
+  );
+};
 
 export default UsersInCards;

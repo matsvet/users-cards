@@ -1,10 +1,10 @@
-import { combineReducers, createStore, applyMiddleware } from 'redux';
-import createSagaMiddleware from 'redux-saga';
-import userReducer from './userReducer';
-import userSaga from './userSaga';
+import { applyMiddleware, combineReducers, createStore } from "redux";
+import createSagaMiddleware from "redux-saga";
+import userReducer from "./userReducer";
+import userSaga from "./userSaga";
 
 const rootReducer = combineReducers({
-    user: userReducer,
+  user: userReducer,
 });
 
 const sagaMiddleware = createSagaMiddleware();

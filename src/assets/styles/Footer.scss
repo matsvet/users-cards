@@ -1,0 +1,49 @@
+.footer {
+  position: fixed;
+  bottom: 3%;
+  width: 91%;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(3px);
+  border-radius: 10px;
+  padding: 1.5vh 2% 1.5vh 2%;
+  color: #6B7280;
+
+  .leftBlock {
+    display: flex;
+    align-items: center;
+  }
+
+  .rightBlock {
+    display: flex;
+
+    .pageDisplayBlock {
+      .inputPage {
+        width: 3rem;
+        margin: 0 10px;
+        background-color: rgba(255, 255, 255, 0.0);
+        border-left: 1px solid #E5E7EB;
+      }
+    }
+
+    .prevNextPageBlock {
+      border-left: 1px solid #E5E7EB;
+      margin-left: 1em;
+
+      .pageButton {
+        border: none;
+        box-shadow: none;
+        color: #6B7280;
+        background-color: rgba(255, 255, 255, 0.0);
+
+        &:disabled {
+          border: none;
+          box-shadow: none;
+          background-color: rgba(255, 255, 255, 0.0);
+        }
+      }
+    }
+  }
+}
