@@ -1,16 +1,8 @@
-import React, {useState} from "react";
+import React from "react";
 import '../assets/styles/UsersInRaw.css'
 import {Avatar, Table} from "antd";
-import UserModalCard from "./UserDisplay/UserModalCard";
 
 const UsersInRow = (props: any) => {
-
-    console.log('What we are getting through props in UsersInRow to final render it using map', props)
-
-    const pageSizeConfig = {
-        pageSize: 20,
-    }
-
     const columns = [
         {
             title: 'ФИО',
@@ -22,7 +14,8 @@ const UsersInRow = (props: any) => {
                     <a className="" onClick={() => props.handleClick(record)}>
                         {text}
                     </a>
-                </div>),
+                </div>
+            ),
         },
         {
             title: 'Логин',
@@ -46,13 +39,12 @@ const UsersInRow = (props: any) => {
         },
     ];
 
-    console.log('DataSource: ', props.users)
-
     return <div>
         <Table className="tableUsersAntd"
                dataSource={props.users}
                columns={columns}
                pagination={false}
+               rowKey="login"
         />
     </div>
 }

@@ -4,7 +4,6 @@ import '../../assets/styles/UserModalCard.css'
 
 // @ts-ignore
 const UserModalCard = ({ user, visible, onClose }) => {
-    console.log(user.name)
     return (
         <Modal className="custom-modal-card"
                open={visible}

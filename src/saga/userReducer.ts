@@ -1,5 +1,3 @@
-import {log} from "util";
-
 interface User {
     // define the User type here
 }
@@ -30,11 +28,8 @@ const initialState: UserState = {
 function userReducer(state = initialState, action: Action) {
     switch (action.type) {
         case 'FETCH_USERS_REQUEST':
-            console.log('case: FETCH_USERS_REQUEST')
-            console.log('page: ', action.payload)
             return { ...state, loading: true, page: action.payload };
         case 'FETCH_USERS_SUCCESS':
-            console.log('case: FETCH_USERS_SUCCESS')
             return { ...state, users: action.payload, loading: false, error: null };
         case 'FETCH_USERS_FAILURE':
             return { ...state, error: action.error, loading: false };

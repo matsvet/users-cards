@@ -1,11 +1,9 @@
-import React, {useState} from "react";
+import React from "react";
 import '../../assets/styles/UserMiniCard.css'
 import {Avatar, Card} from "antd";
-import UserModalCard from "./UserModalCard";
 
 const UserMiniCard = (props: any) => {
     const user = props.user
-
 
     const UserTitle = () => {
         return <a onClick={() => props.handleClick(user)}>{user.name}</a>

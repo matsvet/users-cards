@@ -1,47 +1,39 @@
-import {Route, Routes, useLocation, useSearchParams} from "react-router-dom";
-import React, {useEffect, useState} from "react";
+import {useLocation} from "react-router-dom";
+import React, {useEffect} from "react";
 import UsersInRow from "./UsersInRow";
 import UsersInCards from "./UsersInCards";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchUsersRequest} from "../saga/actions";
 import "../assets/styles/Content.css"
+import Loader from "../assets/images/loader.gif";
 
-// @ts-ignore
+
 const Content = (props: any) => {
-    const [searchParams, setSearchParams] = useSearchParams();
-    const [view, setView] = useState(searchParams.get('tab') || 'table');
     const dispatch = useDispatch();
-
     const location = useLocation();
+    const searchParams = new URLSearchParams(location.search);
+    const page = searchParams.get('page');
+    const tab = searchParams.get('tab');
 
     useEffect(() => {
-        // This function will be called whenever the search params in the URL change
-        console.log('Search params changed:', location.search);
-    }, [location.search]);
+        dispatch(fetchUsersRequest(Number(page)));
+    }, [dispatch, location.search]);
 
     // @ts-ignore
-    useEffect(() => {
-        console.log("-----STARTING-----")
-        dispatch(fetchUsersRequest(props.page));
-        console.log('-1-1-1-1-1-  props.page in fetch in content useEffect:', props.page)
-        console.log('after dispatch in UseEffect')
-        console.log('usersSaga in useEffect:', usersSaga)
-    }, [dispatch]);
-    // @ts-ignore
-
-    const usersSaga = useSelector(state => state.user.users);
+    const usersSaga = useSelector(state => state.user);
 
     const handleClickOnUserName = (user: any) => {
         props.changeVisibility()
         props.setModalUserData(user)
     }
 
-    if (!usersSaga) {
-        return <div>Loading...</div>;
+    if (usersSaga.loading) {
+        return <div className="content loader">
+            <img src={Loader}/>
+        </div>;
     }
-    console.log('usersSaga in Content as a Props for child components: ', usersSaga)
 
-    const dataSource = usersSaga.map((user: any) => {
+    const dataSource = usersSaga.users.map((user: { picture: { thumbnail: string; medium: string; }; name: { title: string; first: string; last: string; }; login: { username: string; }; location: { street: { number: string; name: string; }; city: string; state: string; postcode: string; }; cell: string; email: string; }) => {
         return {
             img: user.picture.thumbnail,
             imgMedium: user.picture.medium,
@@ -52,33 +44,14 @@ const Content = (props: any) => {
             email: user.email,
         }
     })
-    // @ts-ignore
 
     return <main className="content">
-    {/*<Routes>*/}
-    {/*    <Route path="/">*/}
-            {props.view === 'table' && <UsersInRow users={dataSource}
-                                             visibility={props}
-                                             setModalUserData={props.setModalUserData}
-                                             handleClick={handleClickOnUserName}
-            />}
-            {props.view === 'card' && <UsersInCards users={dataSource}
-                                              visibility={props}
-                                              setModalUserData={props.setModalUserData}
-                                              handleClick={handleClickOnUserName}
-            />}
-        {/*</Route>*/}
-        {/*<Route path="/" element={<UsersInRow users={dataSource}*/}
-        {/*                                          visibility={props}*/}
-        {/*                                          setModalUserData={props.setModalUserData}*/}
-        {/*                                          handleClick={handleClickOnUserName}*/}
-        {/*/>}/>*/}
-        {/*<Route path="/" element={<UsersInCards users={dataSource}*/}
-        {/*                                           visibility={props}*/}
-        {/*                                           setModalUserData={props.setModalUserData}*/}
-        {/*                                           handleClick={handleClickOnUserName}*/}
-        {/*/>}/>*/}
-    {/*</Routes>*/}
+        {tab === 'table' && <UsersInRow users={dataSource}
+                                        handleClick={handleClickOnUserName}
+        />}
+        {tab === 'card' && <UsersInCards users={dataSource}
+                                         handleClick={handleClickOnUserName}
+        />}
     </main>
 }
 
